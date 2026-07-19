@@ -49,7 +49,7 @@ jobs:
           rm -f package-lock.json
           npm config set registry https://registry.npmjs.org/
           npm install --no-audit --no-fund --package-lock=false
-
+          npm install --no-audit --no-fund --package-lock=false --save-dev typescript
       - name: Sincronizar Capacitor
         run: npx cap sync android
 
