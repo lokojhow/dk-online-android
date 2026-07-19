@@ -1,4 +1,4 @@
-name: Gerar APK DK Online
+ name: Gerar APK DK Online
 
 on:
   workflow_dispatch:
@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Preparar Java
         uses: actions/setup-java@v4
@@ -43,7 +43,11 @@ jobs:
           sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
 
       - name: Instalar dependências
-        run: npm ci
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
+          npm config set registry https://registry.npmjs.org/
+          npm install --no-audit --no-fund --package-lock=false
 
       - name: Sincronizar Capacitor
         run: npx cap sync android
