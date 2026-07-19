@@ -1,0 +1,29 @@
+DK ONLINE — BASE DO APLICATIVO ANDROID
+
+Identificador: com.dktelecom.dkonline
+Tecnologia: Capacitor 8 + Android
+Versão inicial: 1.0 (teste)
+
+O QUE JÁ ESTÁ NESTA BASE:
+- Todas as telas atuais do DK Online.
+- Firebase e cadastro/login já existentes.
+- Layout adaptado ao smartphone.
+- Ícone e tela de abertura DK Telecom.
+- Módulo nativo RouterBridge.
+- Detecção do gateway local do Wi-Fi.
+- Detecção inicial de roteadores Mercusys/AC12G.
+- Permissão restrita para conexão local HTTP ao roteador.
+- Fluxo gratuito para gerar APK usando GitHub Actions.
+
+O QUE SERÁ ADICIONADO NAS PRÓXIMAS FASES:
+- Login local seguro no Mercusys AC12G.
+- Lista real de dispositivos conectados.
+- Bloquear e desbloquear aparelhos pela chavinha.
+- Alterar SSID e senha das redes 2,4 GHz e 5 GHz.
+- Reiniciar o roteador.
+- Suporte a outros modelos usados pela DK Telecom.
+
+IMPORTANTE:
+- Nenhuma senha do roteador deve ser salva no Firebase.
+- O controle local funciona apenas quando o celular está conectado ao Wi-Fi do cliente.
+- Esta primeira compilação é um APK de teste, não a versão final assinada.
