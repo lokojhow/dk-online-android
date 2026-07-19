@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">DK Online</string>
+    <string name="title_activity_main">DK Online</string>
+    <string name="package_name">com.dktelecom.dkonline</string>
+    <string name="custom_url_scheme">com.dktelecom.dkonline</string>
+</resources>
