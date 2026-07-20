@@ -11,6 +11,7 @@ on:
       - "package.json"
       - "package-lock.json"
       - "capacitor.config.ts"
+      - "capacitor.config.json"
       - ".github/workflows/build-apk.yml"
 
 jobs:
@@ -49,7 +50,25 @@ jobs:
           rm -f package-lock.json
           npm config set registry https://registry.npmjs.org/
           npm install --no-audit --no-fund --package-lock=false
-          npm install --no-audit --no-fund --package-lock=false --save-dev typescript
+
+      - name: Preparar configuração do Capacitor
+        run: |
+          rm -f capacitor.config.ts
+          cat > capacitor.config.json <<'EOF'
+          {
+            "appId": "com.dktelecom.dkonline",
+            "appName": "DK Online",
+            "webDir": "www",
+            "android": {
+              "allowMixedContent": false,
+              "backgroundColor": "#020817"
+            },
+            "server": {
+              "androidScheme": "https"
+            }
+          }
+          EOF
+
       - name: Sincronizar Capacitor
         run: npx cap sync android
 
